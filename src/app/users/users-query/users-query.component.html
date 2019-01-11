@@ -1,3 +1,30 @@
-<p>
-  users-query works!
-</p>
+<div class="container">
+  <button type="button" class="btn btn-primary" [routerLink]="['../create']" routerLinkActive="active">New User</button>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Gender</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users.content; let index = index;">
+        <th>{{index + 1}}</th>
+        <td>{{user.userId}}</td>
+        <td>{{user.userName}}</td>
+        <td>{{user.gender}}</td>
+        <td>
+          <div class="row justify-content-around">
+            <button type="button" class="btn btn-warning btn-sm" [routerLink]="['../edit', user.userId]">Edit</button>
+            <button type="button" class="btn btn-success btn-sm" [routerLink]="['../view', user.userId]">View</button>
+            <button type="button" class="btn btn-danger btn-sm" (click)="deleteUser(user.userId)">Delete</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

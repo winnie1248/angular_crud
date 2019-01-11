@@ -73,11 +73,12 @@ export class UsersService {
     }
   }
 
-  delete(userIds: Array<string>): void {
+  delete(userIds: Array<string>): Observable<any> {
     // const params = this.httpTransferService.setParams(userIds);
     // return this.httpClient.delete(this.url + '/users', {params});
 
     this.userList = this.userList.filter((user: User) => userIds.indexOf(user.userId) === -1);
+    return of('Seccess');
   }
 
   private hasUser(userId: string): boolean {
