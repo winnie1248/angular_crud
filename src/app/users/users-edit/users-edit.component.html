@@ -1,0 +1,52 @@
+<div class="container">
+  <h2 class="text-center text-capitalize">{{viewType}} user</h2>
+  <form (ngSubmit)="onSubmit()" [formGroup]="formGroup">
+    <div class="form-group row">
+      <label for="userId" class="col-sm-2 col-form-label">ID</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="userId" placeholder="ID" formControlName="userId">
+        <small class="text-danger">{{getErrors('userId') | errorMessage}}</small>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="userName" class="col-sm-2 col-form-label">Name</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="userName" placeholder="Name" formControlName="userName">
+        <small class="text-danger">{{getErrors('userName') | errorMessage}}</small>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="email" class="col-sm-2 col-form-label">E-mail</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" id="email" placeholder="E-mail" formControlName="email">
+        <small class="text-danger">{{getErrors('email') | errorMessage}}</small>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="mobilePhone" class="col-sm-2 col-form-label">Mobile Phone</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" id="mobilePhone" placeholder="Mobile Phone" formControlName="mobilePhone">
+        <small class="text-danger">{{getErrors('mobilePhone') | errorMessage}}</small>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="gender" class="col-sm-2 col-form-label">Gender</label>
+      <div class="col-sm-10">
+        <select class="form-control" id="gender" placeholder="Gender" formControlName="gender">
+          <option *ngFor="let gender of genders" [value]="gender">{{gender}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="birthday" class="col-sm-2 col-form-label">Birthday</label>
+      <div class="col-sm-10">
+        <input type="date" class="form-control" id="birthday" placeholder="Birthday" formControlName="birthday">
+        <small class="text-danger">{{getErrors('birthday') | errorMessage}}</small>
+      </div>
+    </div>
+    <div class="row justify-content-around">
+      <button type="button" class="btn btn-secondary" [routerLink]="viewType === 'edit' ? '../../' : '../'">Cancel</button>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>

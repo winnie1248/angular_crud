@@ -1,0 +1,44 @@
+<div class="container">
+  <h2 class="text-center text-capitalize">user info</h2>
+  <form>
+    <div class="form-group row">
+      <label for="userId" class="col-sm-2 col-form-label">ID</label>
+      <div class="col-sm-10">
+        <p class="col-form-label">{{user?.userId || '---'}}</p>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="userName" class="col-sm-2 col-form-label">Name</label>
+      <div class="col-sm-10">
+        <p class="col-form-label">{{user?.userName || '---'}}</p>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="email" class="col-sm-2 col-form-label">E-mail</label>
+      <div class="col-sm-10">
+        <p class="col-form-label">{{user?.email || '---'}}</p>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="mobilePhone" class="col-sm-2 col-form-label">Mobile Phone</label>
+      <div class="col-sm-10">
+        <p class="col-form-label">{{user?.mobilePhone || '---'}}</p>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="gender" class="col-sm-2 col-form-label">Gender</label>
+      <div class="col-sm-10">
+        <p class="col-form-label">{{user?.gender || '---'}}</p>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="birthday" class="col-sm-2 col-form-label">Birthday</label>
+      <div class="col-sm-10">
+        <p class="col-form-label">{{user?.birthday || '---'}}</p>
+      </div>
+    </div>
+    <div class="row justify-content-around">
+      <button type="button" class="btn btn-primary" routerLink="../../">Confirm</button>
+    </div>
+  </form>
+</div>
